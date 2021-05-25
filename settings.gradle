@@ -1,0 +1,25 @@
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'graphql-java-kickstart-samples'
+include 'servlet-hello-world',
+        'subscription-with-authentication',
+        'directives',
+        'spring-boot-webflux',
+        'custom-error-handler',
+        'file-upload',
+        'tools-hello-world',
+        'graphql-annotations'
+include 'error-handling-exception-handlers'
+include 'editors'
+include 'subscription'
+include 'request-scoped-dataloader'
+include 'webflux'
+include 'tools-spring-boot'
+include 'spring-common'
+include 'async-timeout'
+include 'tools-spring-security-async'

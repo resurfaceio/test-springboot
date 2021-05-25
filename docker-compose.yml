@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  resurface:
+    image: resurfaceio/pilot:2.2.8
+    container_name: springboot_resurface
+    ports:
+      - '4000:4000'
+      - '4001:4001'
+      - '4002:4002'
+
+  springboot:
+    image: test-spring-boot
+    container_name: springboot
+    ports:
+      - '80:9001'
+    env_file:
+      - .env

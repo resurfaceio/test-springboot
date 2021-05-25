@@ -1,0 +1,47 @@
+plugins {
+    id "org.springframework.boot" version "$LIB_SPRING_BOOT_VER" apply false
+    id "org.sonarqube" version "3.2.0"
+    id "jacoco"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "graphql-java-kickstart_graphql-java-kickstart-samples"
+        property "sonar.organization", "graphql-java-kickstart"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: 'jacoco'
+    apply plugin: 'org.sonarqube'
+
+    group 'com.graphql-kickstart.samples'
+    version '0.0.1-SNAPSHOT'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    }
+
+    compileJava {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled = true
+        }
+    }
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
