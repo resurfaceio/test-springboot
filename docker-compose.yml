@@ -10,7 +10,7 @@ services:
       - '4002:4002'
 
   springboot:
-    image: test-spring-boot
+    image: test-springboot
     container_name: springboot
     ports:
       - '80:9001'

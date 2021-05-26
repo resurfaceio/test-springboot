@@ -2,13 +2,13 @@ PROJECT_NAME=springboot
 
 start:
 	@docker stop resurface || true
-	@docker build -t test-spring-boot --no-cache .
+	@docker build -t test-springboot --no-cache .
 	@docker-compose up --detach
 
 stop:
 	@docker-compose stop
 	@docker-compose down --volumes
-	@docker image rmi -f test-spring-boot
+	@docker image rmi -f test-springboot
 
 bash:
 	@docker exec -it springboot bash
@@ -25,4 +25,4 @@ ping:
 
 restart:
 	@docker-compose stop
-	@docker-compose up
+	@docker-compose up --detach
