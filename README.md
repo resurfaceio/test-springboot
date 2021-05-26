@@ -1,4 +1,4 @@
-# test-spring-boot
+# test-springboot
 Example GraphQL API built with Spring Boot
 
 This was cloned from [GraphQL Java Kickstart samples](https://github.com/graphql-java-kickstart/samples).
