@@ -16,3 +16,5 @@ services:
       - '80:9001'
     env_file:
       - .env
+    volumes:
+      - ${HOME}/.gradle:/root/.gradle
