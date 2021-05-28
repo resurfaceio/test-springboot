@@ -1,4 +1,4 @@
-FROM gradle:7.0.2-jdk11
+FROM resurfaceio/python-gradle:2.3.0
 WORKDIR /app
 COPY . .
 EXPOSE 9001

@@ -26,3 +26,6 @@ ping:
 restart:
 	@docker-compose stop
 	@docker-compose up --detach
+
+test:
+	@docker exec -it springboot python3 test.py
